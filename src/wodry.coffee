@@ -24,6 +24,7 @@ $.fn.extend
                     transform: " rotateX(180deg)"
                     transition:" #{settings.animationTime}ms"
             rotateAll:
+                isCoplex: true
                 front_transform: "translate3d(0,0,0) "
                 back_transform: "translate3d(0,0,0) rotateX(180deg) rotateY(180deg)"
                 action:
@@ -67,9 +68,8 @@ $.fn.extend
                 container.wrapInner "<span class='adjecting' />"
                     .find(".adjecting").hide().show().css prefixer(["transform","transition"],[animation.action.transform,animation.action.transition])
 
-                $ ".fromt-face"
-                    .remove()
-                    
+                do $(".fromt-face").remove if animation.isCoplex
+
             flip = ->
                 if flip_container.find(".back-face").length > 0
                     flip_container.html do flip_container.find(".back-face").html

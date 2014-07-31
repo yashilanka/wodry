@@ -47,6 +47,7 @@
           }
         },
         rotateAll: {
+          isCoplex: true,
           front_transform: "translate3d(0,0,0) ",
           back_transform: "translate3d(0,0,0) rotateX(180deg) rotateY(180deg)",
           action: {
@@ -92,7 +93,9 @@
           $("<span class='back-face'>" + nextText + "</span>").appendTo(container);
           $(".back-face").css(prefixer(["transform"], [animation.back_transform]));
           container.wrapInner("<span class='adjecting' />").find(".adjecting").hide().show().css(prefixer(["transform", "transition"], [animation.action.transform, animation.action.transition]));
-          return $(".fromt-face").remove();
+          if (animation.isCoplex) {
+            return $(".fromt-face").remove();
+          }
         };
         flip = function() {
           var back_text_index, front_text;
