@@ -68,7 +68,10 @@ $.fn.extend
                 container.wrapInner "<span class='adjecting' />"
                     .find(".adjecting").hide().show().css prefixer(["transform","transition"],[animation.action.transform,animation.action.transition])
 
-                do $(".fromt-face").remove if animation.isCoplex
+                if animation.isCoplex
+                    setTimeout ->
+                        do $(".front-face").remove
+                    , settings.animationTime / 2 
 
             flip = ->
                 if flip_container.find(".back-face").length > 0
