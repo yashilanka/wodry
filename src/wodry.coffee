@@ -7,7 +7,7 @@ $.fn.extend
         settings.delay ?= 2000
         settings.animationTime ?= 500
         settings.arm ?= 100
-        settings.animation ?= 'rotateY'
+        settings.animation ?= 'rotateX'
         settings.callback ?= ->
 
         animations =
@@ -16,6 +16,12 @@ $.fn.extend
                 back_transform: "translate3d(0,0,#{settings.arm}px) rotateY(180deg)"
                 action:
                     transform: " rotateY(180deg)"
+                    transition:" #{settings.animationTime}ms"
+            rotateX:
+                front_transform: "translate3d(0,0,#{settings.arm}px)"
+                back_transform: "translate3d(0,0,#{settings.arm}px) rotateX(180deg)"
+                action:
+                    transform: " rotateX(180deg)"
                     transition:" #{settings.animationTime}ms"
 
         @each ->

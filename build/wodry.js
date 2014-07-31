@@ -24,7 +24,7 @@
         settings.arm = 100;
       }
       if (settings.animation == null) {
-        settings.animation = 'rotateY';
+        settings.animation = 'rotateX';
       }
       if (settings.callback == null) {
         settings.callback = function() {};
@@ -35,6 +35,14 @@
           back_transform: "translate3d(0,0," + settings.arm + "px) rotateY(180deg)",
           action: {
             transform: " rotateY(180deg)",
+            transition: " " + settings.animationTime + "ms"
+          }
+        },
+        rotateX: {
+          front_transform: "translate3d(0,0," + settings.arm + "px)",
+          back_transform: "translate3d(0,0," + settings.arm + "px) rotateX(180deg)",
+          action: {
+            transform: " rotateX(180deg)",
             transition: " " + settings.animationTime + "ms"
           }
         }
