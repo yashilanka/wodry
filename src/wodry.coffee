@@ -14,7 +14,7 @@ $.fn.extend
             rotateY:
                 front_transform: "translate3d(0,0,#{settings.arm}px)"
                 back_transform: "translate3d(0,0,#{settings.arm}px) rotateY(180deg)"
-                animation:
+                action:
                     transform: " rotateY(180deg)"
                     transition:" #{settings.animationTime}ms"
 
@@ -41,6 +41,21 @@ $.fn.extend
                         result["#{o}"] = value
                         result["#{property}"] = value
                     result
+
+            animate = (animation,container,currentText, nextText) ->
+                container.html ""
+                $ "<span class='front-face'>#{currentText}</span>"
+                    .appendTo container
+                $ ".front-face"
+                    .css prefixer(["transform"],[animation.front_transform])
+                $ "<span class='back-face'>#{nextText}</span>"
+                    .appendTo container
+                $ ".back-face"
+                    .css prefixer(["transform"], [animation.back_transform])
+
+                container.wrapInner "<span class='adjecting' />"
+                    .find(".adjecting").hide().show().css prefixer(["transform","transition"],[animation.action.transform,animation.action.transition])
+
 
             flip = ->
                 if flip_container.find(".back-face").length > 0

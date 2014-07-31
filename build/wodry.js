@@ -33,14 +33,14 @@
         rotateY: {
           front_transform: "translate3d(0,0," + settings.arm + "px)",
           back_transform: "translate3d(0,0," + settings.arm + "px) rotateY(180deg)",
-          animation: {
+          action: {
             transform: " rotateY(180deg)",
             transition: " " + settings.animationTime + "ms"
           }
         }
       };
       return this.each(function() {
-        var array, flip, flip_container, prefixer;
+        var animate, array, flip, flip_container, prefixer;
         flip_container = $(this);
         array = [];
         $.each(flip_container.text().split(settings.separator), function(key, value) {
@@ -68,6 +68,14 @@
             }
             return result;
           }
+        };
+        animate = function(animation, container, currentText, nextText) {
+          container.html("");
+          $("<span class='front-face'>" + currentText + "</span>").appendTo(container);
+          $(".front-face").css(prefixer(["transform"], [animation.front_transform]));
+          $("<span class='back-face'>" + nextText + "</span>").appendTo(container);
+          $(".back-face").css(prefixer(["transform"], [animation.back_transform]));
+          return container.wrapInner("<span class='adjecting' />").find(".adjecting").hide().show().css(prefixer(["transform", "transition"], [animation.action.transform, animation.action.transition]));
         };
         flip = function() {
           var back_text_index, front_text;
