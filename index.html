@@ -4,18 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Wodry.js</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-    <div class="container">
-        Wodry.js can rotate your words<span>like this</span>
+    <div class="contain">
+        <p>Wodry.js can rotate your word <span class="wodry"> this|and|or</span>
+        </p>
+
     </div>
 
 </body>
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="build/wodry.js"></script>
 <script>
-$()
+$('.contain .wodry').wodry({
+    animation: 'rotateX',
+    delay: 4450,
+    callback: function() {
+        console.log('callback');
+    }
+});
 </script>
 
 </html>

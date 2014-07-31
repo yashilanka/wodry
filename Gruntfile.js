@@ -15,7 +15,7 @@ module.exports = function(grunt) {
         watch: {
             dev: {
                 files: ['src/*', 'test/*.coffee'],
-                tasks: ['coffee', 'test', 'notify:test']
+                tasks: ['coffee', 'connect:livereload', 'notify:test']
             }
         },
         clean: {
@@ -47,8 +47,8 @@ module.exports = function(grunt) {
                 options: {
                     middleware: function(connect) {
                         return [
-                            connect.static('.tmp'),
-                            connect().use('/bower_components', connect.static('./bower_components')),
+                            connect.static('.'),
+                            connect().use('/node_modules', connect.static('./node_modules')),
                             connect.static(config.app)
                         ];
                     }
@@ -60,9 +60,8 @@ module.exports = function(grunt) {
                     port: 9001,
                     middleware: function(connect) {
                         return [
-                            connect.static('.tmp'),
-                            connect.static('test'),
-                            connect().use('/bower_components', connect.static('./bower_components')),
+                            connect.static('.'),
+                            connect().use('/node_modules', connect.static('./node_modules')),
                             connect.static(config.app)
                         ];
                     }

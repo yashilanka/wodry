@@ -37,6 +37,6 @@
     "grunt-contrib-coffee": "^0.10.1"
   },
   "dependencies": {
-    "jquery": "^2.1.1"
+    "jquery": "^1.11.0"
   }
 }

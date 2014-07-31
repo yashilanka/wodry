@@ -7,7 +7,7 @@ $.fn.extend
         settings.delay ?= 2000
         settings.animationTime ?= 500
         settings.arm ?= 0
-        settings.animation ?= 'rotateX2'
+        settings.animation ?= 'rotateY'
         settings.callback ?= ->
 
         animations =
@@ -25,7 +25,7 @@ $.fn.extend
                     transition:" #{settings.animationTime}ms"
             rotateAll:
                 isCoplex: true
-                front_transform: "translate3d(0,0,0) "
+                front_transform: "translate3d(0,0,0) rotateX(180deg) rotateY(180deg)"
                 back_transform: "translate3d(0,0,0) rotateX(180deg) rotateY(180deg)"
                 action:
                     transform: " rotateX(180deg) rotateY(180deg)"

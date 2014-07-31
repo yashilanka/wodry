@@ -24,7 +24,7 @@
         settings.arm = 0;
       }
       if (settings.animation == null) {
-        settings.animation = 'rotateX2';
+        settings.animation = 'rotateY';
       }
       if (settings.callback == null) {
         settings.callback = function() {};
@@ -48,7 +48,7 @@
         },
         rotateAll: {
           isCoplex: true,
-          front_transform: "translate3d(0,0,0) ",
+          front_transform: "translate3d(0,0,0) rotateX(180deg) rotateY(180deg)",
           back_transform: "translate3d(0,0,0) rotateX(180deg) rotateY(180deg)",
           action: {
             transform: " rotateX(180deg) rotateY(180deg)",
