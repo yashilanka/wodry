@@ -12,6 +12,14 @@ $.fn.extend
 				return)
 			flip_container.text array[0]
 
+			prefixer = (property, value) ->
+				[webkit, moz, o] = ["-webkit-#{property}","-moz-#{property}","-o-#{property}"]
+
+				webkit : value
+				moz : value
+				o : value
+				property : value
+
 			flip = ->
 				if flip_container.find(".back-face").length > 0
 					flip_container.html do flip_container.find(".back-face").html
@@ -25,21 +33,11 @@ $.fn.extend
 				$ "<span class='front-face'>#{front_text}</span>"
 					.appendTo flip_container
 				$ ".front-face"
-					.css {
-						"-webkit-transform": "translate3d(0,0,#{settings.arm}px)",
-						"-moz-transform": "translate3d(0,0,#{settings.arm}px)",
-						"-o-transform": "translate3d(0,0,#{settings.arm}px)",
-						"transform": "translate3d(0,0,#{settings.arm}px)",
-					}
+					.css prefixer("transform","translate3d(0,0,#{settings.arm}px)")
 				$ "<span class='back-face'>#{array[back_text_index + 1]}</span>"
 					.appendTo flip_container
 				$ ".back-face"
-					.css {
-						"-webkit-transform": "translate3d(0,0,#{settings.arm}px) rotateY(180deg)",
-						"-moz-transform": "translate3d(0,0,#{settings.arm}px) rotateY(180deg)",
-						"-o-transform": "translate3d(0,0,#{settings.arm}px) rotateY(180deg)",
-						"transform": "translate3d(0,0,#{settings.arm}px) rotateY(180deg)",
-					}
+					.css prefixer("transform", "translate3d(0,0,#{settings.arm}px) rotateY(180deg)")
 
 				flip_container.wrapInner "<span class='adjecting' />"
 					.find(".adjecting").hide().show().css {
