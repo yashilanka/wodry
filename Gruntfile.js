@@ -15,7 +15,7 @@ module.exports = function(grunt) {
         watch: {
             dev: {
                 files: ['src/*', 'test/*.coffee'],
-                tasks: ['coffee','test', 'notify:test']
+                tasks: ['coffee', 'test', 'notify:test']
             }
         },
         clean: {
@@ -36,12 +36,42 @@ module.exports = function(grunt) {
             }
         },
         connect: {
-            server: {
+            options: {
+                port: 9000,
+                open: true,
+                livereload: 35729,
+                // Change this to '0.0.0.0' to access the server from outside
+                hostname: 'localhost'
+            },
+            livereload: {
                 options: {
-                    port: 3333,
-                    open: {
-                        target: 'http://localhost:3333'
+                    middleware: function(connect) {
+                        return [
+                            connect.static('.tmp'),
+                            connect().use('/bower_components', connect.static('./bower_components')),
+                            connect.static(config.app)
+                        ];
                     }
+                }
+            },
+            test: {
+                options: {
+                    open: false,
+                    port: 9001,
+                    middleware: function(connect) {
+                        return [
+                            connect.static('.tmp'),
+                            connect.static('test'),
+                            connect().use('/bower_components', connect.static('./bower_components')),
+                            connect.static(config.app)
+                        ];
+                    }
+                }
+            },
+            dist: {
+                options: {
+                    base: '<%= config.dist %>',
+                    livereload: false
                 }
             }
         },
@@ -88,7 +118,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-coffee');
 
     grunt.registerTask('test', ['jasmine']);
-    grunt.registerTask('travis-ci-test', ['coffee','karma:travis', 'coveralls']);
-    grunt.registerTask('default', ['clean','coffee', 'test', 'uglify', 'coveralls']);
+    grunt.registerTask('travis-ci-test', ['coffee', 'karma:travis', 'coveralls']);
+    grunt.registerTask('default', ['clean', 'coffee', 'test', 'uglify', 'coveralls']);
     grunt.registerTask('dev', ['watch']);
 };
