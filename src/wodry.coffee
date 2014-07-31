@@ -9,6 +9,14 @@ $.fn.extend
         settings.arm ?= 100
         settings.callback ?= ->
 
+        @animations =
+            rotateY:
+                front_transform: "translate3d(0,0,#{settings.arm}px)"
+                back_transform: "translate3d(0,0,#{settings.arm}px) rotateY(180deg)"
+                animation:
+                    transform: " rotateY(180deg)"
+                    transition:" #{settings.animationTime}ms"
+
         @each ->
             flip_container = $(this)
             array = []

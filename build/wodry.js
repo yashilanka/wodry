@@ -26,6 +26,16 @@
       if (settings.callback == null) {
         settings.callback = function() {};
       }
+      this.animations = {
+        rotateY: {
+          front_transform: "translate3d(0,0," + settings.arm + "px)",
+          back_transform: "translate3d(0,0," + settings.arm + "px) rotateY(180deg)",
+          animation: {
+            transform: " rotateY(180deg)",
+            transition: " " + settings.animationTime + "ms"
+          }
+        }
+      };
       return this.each(function() {
         var array, flip, flip_container, prefixer;
         flip_container = $(this);
