@@ -7,7 +7,7 @@ $.fn.extend
         settings.delay ?= 2000
         settings.animationTime ?= 500
         settings.arm ?= 0
-        settings.animation ?= 'rotateX'
+        settings.animation ?= 'rotateX2'
         settings.callback ?= ->
 
         animations =
@@ -23,6 +23,12 @@ $.fn.extend
                 action:
                     transform: " rotateX(180deg)"
                     transition:" #{settings.animationTime}ms"
+            rotateAll:
+                front_transform: "translate3d(0,0,0) "
+                back_transform: "translate3d(0,0,0) rotateX(180deg) rotateY(180deg)"
+                action:
+                    transform: " rotateX(180deg) rotateY(180deg)"
+                    transition:" #{settings.animationTime}ms"
 
         @each ->
             flip_container = $(this)
@@ -37,7 +43,6 @@ $.fn.extend
                 for property in properties
                     i = properties.indexOf property
                     propHash[property] = values[i]
-
 
                 if properties.length is values.length 
                     for own property, value of propHash 
@@ -61,7 +66,6 @@ $.fn.extend
 
                 container.wrapInner "<span class='adjecting' />"
                     .find(".adjecting").hide().show().css prefixer(["transform","transition"],[animation.action.transform,animation.action.transition])
-
 
             flip = ->
                 if flip_container.find(".back-face").length > 0
