@@ -21,7 +21,7 @@
         settings.animationTime = 500;
       }
       if (settings.arm == null) {
-        settings.arm = 100;
+        settings.arm = 0;
       }
       if (settings.animation == null) {
         settings.animation = 'rotateX';

@@ -6,7 +6,7 @@ $.fn.extend
         settings.separator ?= '|'
         settings.delay ?= 2000
         settings.animationTime ?= 500
-        settings.arm ?= 100
+        settings.arm ?= 0
         settings.animation ?= 'rotateX'
         settings.callback ?= ->
 
