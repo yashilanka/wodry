@@ -6,7 +6,7 @@
 
   $.fn.extend({
     wodry: function(config) {
-      var settings;
+      var animations, settings;
       if (config == null) {
         config = {};
       }
@@ -29,7 +29,7 @@
       if (settings.callback == null) {
         settings.callback = function() {};
       }
-      this.animations = {
+      animations = {
         rotateY: {
           front_transform: "translate3d(0,0," + settings.arm + "px)",
           back_transform: "translate3d(0,0," + settings.arm + "px) rotateY(180deg)",
@@ -87,12 +87,7 @@
           if ((back_text_index + 1) === array.length) {
             back_text_index = -1;
           }
-          flip_container.html("");
-          $("<span class='front-face'>" + front_text + "</span>").appendTo(flip_container);
-          $(".front-face").css(prefixer(["transform"], ["translate3d(0,0," + settings.arm + "px)"]));
-          $("<span class='back-face'>" + array[back_text_index + 1] + "</span>").appendTo(flip_container);
-          $(".back-face").css(prefixer(["transform"], ["translate3d(0,0," + settings.arm + "px) rotateY(180deg)"]));
-          return flip_container.wrapInner("<span class='adjecting' />").find(".adjecting").hide().show().css(prefixer(["transform", "transition"], [" rotateY(180deg)", " " + settings.animationTime + "ms"]));
+          return animate(animations[settings.animation], flip_container, front_text, array[back_text_index + 1]);
         };
         return setInterval(function() {
           flip();

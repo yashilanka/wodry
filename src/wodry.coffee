@@ -10,7 +10,7 @@ $.fn.extend
         settings.animation ?= 'rotateY'
         settings.callback ?= ->
 
-        @animations =
+        animations =
             rotateY:
                 front_transform: "translate3d(0,0,#{settings.arm}px)"
                 back_transform: "translate3d(0,0,#{settings.arm}px) rotateY(180deg)"
@@ -66,18 +66,7 @@ $.fn.extend
                 if (back_text_index + 1) is array.length
                     back_text_index = -1
 
-                flip_container.html ""
-                $ "<span class='front-face'>#{front_text}</span>"
-                    .appendTo flip_container
-                $ ".front-face"
-                    .css prefixer(["transform"],["translate3d(0,0,#{settings.arm}px)"])
-                $ "<span class='back-face'>#{array[back_text_index + 1]}</span>"
-                    .appendTo flip_container
-                $ ".back-face"
-                    .css prefixer(["transform"], ["translate3d(0,0,#{settings.arm}px) rotateY(180deg)"])
-
-                flip_container.wrapInner "<span class='adjecting' />"
-                    .find(".adjecting").hide().show().css prefixer(["transform","transition"],[ " rotateY(180deg)"," #{settings.animationTime}ms"])
+                animate(animations[settings.animation],flip_container,front_text,array[back_text_index + 1])
             
             setInterval -> 
                 do flip
