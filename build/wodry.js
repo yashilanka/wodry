@@ -17,12 +17,12 @@
         };
       }
       settings = $.extend({}, config);
-      this.each(function() {
+      return this.each(function() {
         var array, flip, flip_container, prefixer;
         flip_container = $(this);
         array = [];
         $.each(flip_container.text().split(settings.separator), function(key, value) {
-          array.push(value);
+          return array.push(value);
         });
         flip_container.text(array[0]);
         prefixer = function(properties, values) {
@@ -62,11 +62,11 @@
           $(".front-face").css(prefixer(["transform"], ["translate3d(0,0," + settings.arm + "px)"]));
           $("<span class='back-face'>" + array[back_text_index + 1] + "</span>").appendTo(flip_container);
           $(".back-face").css(prefixer(["transform"], ["translate3d(0,0," + settings.arm + "px) rotateY(180deg)"]));
-          flip_container.wrapInner("<span class='adjecting' />").find(".adjecting").hide().show().css(prefixer(["transform", "transition"], [" rotateY(180deg)", " " + settings.animationTime + "ms"]));
+          return flip_container.wrapInner("<span class='adjecting' />").find(".adjecting").hide().show().css(prefixer(["transform", "transition"], [" rotateY(180deg)", " " + settings.animationTime + "ms"]));
         };
-        setInterval(function() {
+        return setInterval(function() {
           flip();
-          settings.callback();
+          return settings.callback();
         }, settings.delay + settings.animationTime);
       });
     }

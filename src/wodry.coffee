@@ -7,9 +7,7 @@ $.fn.extend
 		@each ->
 			flip_container = $(this)
 			array = []
-			$.each(flip_container.text().split(settings.separator), (key, value) -> 
-				array.push value
-				return)
+			$.each(flip_container.text().split(settings.separator), (key, value) -> array.push value)
 			flip_container.text array[0]
 
 			prefixer = (properties, values) ->
@@ -51,12 +49,8 @@ $.fn.extend
 
 				flip_container.wrapInner "<span class='adjecting' />"
 					.find(".adjecting").hide().show().css prefixer(["transform","transition"],[ " rotateY(180deg)"," #{settings.animationTime}ms"])
-				return
 			
 			setInterval -> 
 				do flip
 				do settings.callback
-				return
 			, (settings.delay + settings.animationTime)
-			return
-		return
