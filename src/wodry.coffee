@@ -71,7 +71,7 @@ $.fn.extend
                 if animation.isCoplex
                     setTimeout ->
                         do $(".front-face").remove
-                    , settings.animationTime / 2 
+                    , 20
 
             flip = ->
                 if flip_container.find(".back-face").length > 0

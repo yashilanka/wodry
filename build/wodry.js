@@ -96,7 +96,7 @@
           if (animation.isCoplex) {
             return setTimeout(function() {
               return $(".front-face").remove();
-            }, settings.animationTime / 2);
+            }, 20);
           }
         };
         flip = function() {
