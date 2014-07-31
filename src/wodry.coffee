@@ -12,13 +12,23 @@ $.fn.extend
 				return)
 			flip_container.text array[0]
 
-			prefixer = (property, value) ->
-				[webkit, moz, o] = ["-webkit-#{property}","-moz-#{property}","-o-#{property}"]
+			prefixer = (properties, values) ->
+				result = {}
+				propHash = {}
+				
+				for property in properties
+					i = properties.indexOf property
+					propHash[property] = values[i]
 
-				webkit : value
-				moz : value
-				o : value
-				property : value
+
+				if properties.length is values.length 
+					for own property, value of propHash 
+						[webkit, moz, o] = ["-webkit-#{property}","-moz-#{property}","-o-#{property}"]
+						result["#{webkit}"] = value
+						result["#{moz}"] = value
+						result["#{o}"] = value
+						result["#{property}"] = value
+					result
 
 			flip = ->
 				if flip_container.find(".back-face").length > 0
@@ -33,23 +43,14 @@ $.fn.extend
 				$ "<span class='front-face'>#{front_text}</span>"
 					.appendTo flip_container
 				$ ".front-face"
-					.css prefixer("transform","translate3d(0,0,#{settings.arm}px)")
+					.css prefixer(["transform"],["translate3d(0,0,#{settings.arm}px)"])
 				$ "<span class='back-face'>#{array[back_text_index + 1]}</span>"
 					.appendTo flip_container
 				$ ".back-face"
-					.css prefixer("transform", "translate3d(0,0,#{settings.arm}px) rotateY(180deg)")
+					.css prefixer(["transform"], ["translate3d(0,0,#{settings.arm}px) rotateY(180deg)"])
 
 				flip_container.wrapInner "<span class='adjecting' />"
-					.find(".adjecting").hide().show().css {
-									"-webkit-transform": " rotateY(180deg)",
-									"-moz-transform": " rotateY(180deg)",
-									"-o-transform": " rotateY(180deg)",
-									"transform": " rotateY(180deg)",
-									"-webkit-transition": " #{settings.animationTime}ms",
-									"-moz-transition": " #{settings.animationTime}ms",
-									"-o-transition": " #{settings.animationTime}ms",
-									"transition": " #{settings.animationTime}ms",
-								}
+					.find(".adjecting").hide().show().css prefixer(["transform","transition"],[ " rotateY(180deg)"," #{settings.animationTime}ms"])
 				return
 			
 			setInterval -> 
