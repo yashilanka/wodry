@@ -94,7 +94,7 @@
           $(".back-face").css(prefixer(["transform"], [animation.back_transform]));
           container.wrapInner("<span class='adjecting' />").find(".adjecting").hide().show().css(prefixer(["transform", "transition"], [animation.action.transform, animation.action.transition]));
           if (animation.isCoplex) {
-            return $(".fromt-face").remove();
+            return $(".front-face").remove();
           }
         };
         flip = function() {
