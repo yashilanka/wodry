@@ -47,5 +47,11 @@ body, html{
 /* Demo page classes */
 
 .wodry{
-  color: #e04401;
+  color: #ff786c;
+}
+.wodryX{
+  color: #c5ff71;
+}
+.wodryY{
+  color: #84caff;
 }

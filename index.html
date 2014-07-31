@@ -9,7 +9,20 @@
 
 <body>
     <div class="contain">
-        <p>Wodry.js can rotate your word <span class="wodry">like this|and this|or this</span>
+        <p>Wodry.js can rotate your word
+            <span class="wodry">like this|and this|or this</span>
+        </p>
+
+    </div>
+    <div class="contain">
+        <p>Wodry.js can help you to rotate
+            <span class="wodryX">all|words|in the world</span>!
+        </p>
+
+    </div>
+    <div class="contain">
+        <p>If you want to rotate your text horizontaly you
+            <span class="wodryY">can|do|this</span>with Wodry.js
         </p>
 
     </div>
@@ -19,11 +32,13 @@
 <script src="build/wodry.js"></script>
 <script>
 $('.contain .wodry').wodry({
-    animation: 'rotateAll',
-    delay: 4450,
-    callback: function() {
-        console.log('callback');
-    }
+    animation: 'rotateAll'
+});
+$('.contain .wodryY').wodry({
+    animation: 'rotateY'
+});
+$('.contain .wodryX').wodry({
+    animation: 'rotateX'
 });
 </script>
 
