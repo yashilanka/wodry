@@ -42,10 +42,10 @@ $.fn.extend
                 if properties.length is values.length 
                     for own property, value of propHash 
                         [webkit, moz, o] = ["-webkit-#{property}","-moz-#{property}","-o-#{property}"]
-                        result["#{webkit}"] = value
-                        result["#{moz}"] = value
-                        result["#{o}"] = value
-                        result["#{property}"] = value
+                        result[webkit] = value
+                        result[moz] = value
+                        result[o] = value
+                        result[property] = value
                     result
 
             animate = (animation,container,currentText, nextText) ->

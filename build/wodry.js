@@ -69,10 +69,10 @@
               if (!__hasProp.call(propHash, property)) continue;
               value = propHash[property];
               _ref = ["-webkit-" + property, "-moz-" + property, "-o-" + property], webkit = _ref[0], moz = _ref[1], o = _ref[2];
-              result["" + webkit] = value;
-              result["" + moz] = value;
-              result["" + o] = value;
-              result["" + property] = value;
+              result[webkit] = value;
+              result[moz] = value;
+              result[o] = value;
+              result[property] = value;
             }
             return result;
           }
