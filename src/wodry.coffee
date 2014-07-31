@@ -7,6 +7,7 @@ $.fn.extend
         settings.delay ?= 2000
         settings.animationTime ?= 500
         settings.arm ?= 100
+        settings.animation ?= 'rotateY'
         settings.callback ?= ->
 
         @animations =

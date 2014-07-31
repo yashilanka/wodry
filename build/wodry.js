@@ -23,6 +23,9 @@
       if (settings.arm == null) {
         settings.arm = 100;
       }
+      if (settings.animation == null) {
+        settings.animation = 'rotateY';
+      }
       if (settings.callback == null) {
         settings.callback = function() {};
       }
