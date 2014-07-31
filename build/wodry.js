@@ -89,13 +89,13 @@
         animate = function(animation, container, currentText, nextText) {
           container.html("");
           $("<span class='front-face'>" + currentText + "</span>").appendTo(container);
-          $(".front-face").css(prefixer(["transform"], [animation.front_transform]));
+          $("." + container.context.className + " .front-face").css(prefixer(["transform"], [animation.front_transform]));
           $("<span class='back-face'>" + nextText + "</span>").appendTo(container);
-          $(".back-face").css(prefixer(["transform"], [animation.back_transform]));
+          $("." + container.context.className + " .back-face").css(prefixer(["transform"], [animation.back_transform]));
           container.wrapInner("<span class='adjecting' />").find(".adjecting").hide().show().css(prefixer(["transform", "transition"], [animation.action.transform, animation.action.transition]));
           if (animation.isCoplex) {
             return setTimeout(function() {
-              return $(".front-face").remove();
+              return $("." + container.context.className + " .front-face").remove();
             }, 20);
           }
         };

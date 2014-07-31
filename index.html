@@ -15,14 +15,13 @@
 
     </div>
     <div class="contain">
-        <p>Wodry.js can help you to rotate
-            <span class="wodryX">all|words|in the world</span>!
+        <p>Wodry.js can help you to rotate all words <span class="wodryY">in|the|world</span>!
         </p>
 
     </div>
     <div class="contain">
         <p>If you want to rotate your text horizontaly you
-            <span class="wodryY">can|do|this</span>with Wodry.js
+            <span class="wodryX">can|do|this</span> with Wodry.js
         </p>
 
     </div>
@@ -32,13 +31,16 @@
 <script src="build/wodry.js"></script>
 <script>
 $('.contain .wodry').wodry({
-    animation: 'rotateAll'
+    animation: 'rotateAll',
+    delay: 2500
 });
 $('.contain .wodryY').wodry({
-    animation: 'rotateY'
+    animation: 'rotateY',
+    delay: 3500
 });
 $('.contain .wodryX').wodry({
-    animation: 'rotateX'
+    animation: 'rotateX',
+    delay: 3000
 });
 </script>
 

@@ -58,11 +58,11 @@ $.fn.extend
                 container.html ""
                 $ "<span class='front-face'>#{currentText}</span>"
                     .appendTo container
-                $ ".front-face"
+                $ ".#{container.context.className} .front-face"
                     .css prefixer(["transform"],[animation.front_transform])
                 $ "<span class='back-face'>#{nextText}</span>"
                     .appendTo container
-                $ ".back-face"
+                $ ".#{container.context.className} .back-face"
                     .css prefixer(["transform"], [animation.back_transform])
 
                 container.wrapInner "<span class='adjecting' />"
@@ -70,7 +70,7 @@ $.fn.extend
 
                 if animation.isCoplex
                     setTimeout ->
-                        do $(".front-face").remove
+                        do $(".#{container.context.className} .front-face").remove
                     , 20
 
             flip = ->
