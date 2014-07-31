@@ -91,7 +91,8 @@
           $(".front-face").css(prefixer(["transform"], [animation.front_transform]));
           $("<span class='back-face'>" + nextText + "</span>").appendTo(container);
           $(".back-face").css(prefixer(["transform"], [animation.back_transform]));
-          return container.wrapInner("<span class='adjecting' />").find(".adjecting").hide().show().css(prefixer(["transform", "transition"], [animation.action.transform, animation.action.transition]));
+          container.wrapInner("<span class='adjecting' />").find(".adjecting").hide().show().css(prefixer(["transform", "transition"], [animation.action.transform, animation.action.transition]));
+          return $(".fromt-face").remove();
         };
         flip = function() {
           var back_text_index, front_text;

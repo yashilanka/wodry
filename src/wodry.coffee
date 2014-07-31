@@ -67,6 +67,9 @@ $.fn.extend
                 container.wrapInner "<span class='adjecting' />"
                     .find(".adjecting").hide().show().css prefixer(["transform","transition"],[animation.action.transform,animation.action.transition])
 
+                $ ".fromt-face"
+                    .remove()
+                    
             flip = ->
                 if flip_container.find(".back-face").length > 0
                     flip_container.html do flip_container.find(".back-face").html
