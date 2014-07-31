@@ -1,8 +1,13 @@
 $ = jQuery
 
 $.fn.extend
-	wodry : (config = {separator: '|', delay: 2000, animationTime: 500, arm: 100, callback: ->}) ->
+	wodry : (config = {}) ->
 		settings = $.extend({}, config)
+		settings.separator ?= '|'
+		settings.delay ?= 2000
+		settings.animationTime ?= 500
+		settings.arm ?= 100
+		settings.callback ?= ->
 
 		@each ->
 			flip_container = $(this)

@@ -8,15 +8,24 @@
     wodry: function(config) {
       var settings;
       if (config == null) {
-        config = {
-          separator: '|',
-          delay: 2000,
-          animationTime: 500,
-          arm: 100,
-          callback: function() {}
-        };
+        config = {};
       }
       settings = $.extend({}, config);
+      if (settings.separator == null) {
+        settings.separator = '|';
+      }
+      if (settings.delay == null) {
+        settings.delay = 2000;
+      }
+      if (settings.animationTime == null) {
+        settings.animationTime = 500;
+      }
+      if (settings.arm == null) {
+        settings.arm = 100;
+      }
+      if (settings.callback == null) {
+        settings.callback = function() {};
+      }
       return this.each(function() {
         var array, flip, flip_container, prefixer;
         flip_container = $(this);
