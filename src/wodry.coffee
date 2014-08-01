@@ -44,6 +44,13 @@ $.fn.extend
                 action:
                     transform: " scaleY(10)"
                     transition:" #{settings.animationTime}ms"
+            scaleAll:
+                isCoplex: true
+                front_transform: "translate3d(0,0,0) scaleY(0.1) slaleX(0.1)"
+                back_transform: "translate3d(0,0,0) scaleY(0.1) scaleX(0.1)"
+                action:
+                    transform: " scaleY(10) scaleX(10)"
+                    transition:" #{settings.animationTime}ms"
 
         @each ->
             flip_container = $(this)
