@@ -51,6 +51,20 @@ $.fn.extend
                 action:
                     transform: " scaleY(10) scaleX(10)"
                     transition:" #{settings.animationTime}ms"
+            anticlockwise:
+                isCoplex: true
+                front_transform: "translate3d(0,0,0) rotate3d(100,40,-80,180deg)"
+                back_transform: "translate3d(0,0,0) rotate3d(100,40,-80,180deg)"
+                action:
+                    transform: " rotate3d(100,40,-80,180deg)"
+                    transition:" #{settings.animationTime}ms"
+            clockwise:
+                isCoplex: true
+                front_transform: "translate3d(0,0,0) rotate3d(40,100,80,180deg)"
+                back_transform: "translate3d(0,0,0) rotate3d(40,100,80,180deg)"
+                action:
+                    transform: " rotate3d(40,100,80,180deg)"
+                    transition:" #{settings.animationTime}ms"
 
         @each ->
             flip_container = $(this)

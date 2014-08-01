@@ -15,7 +15,8 @@
 
     </div>
     <div class="contain">
-        <p>Wodry.js can help you to rotate all words <span class="wodryY">in|the|world</span>!
+        <p>Wodry.js can help you to rotate all words
+            <span class="wodryY">in|the|world</span>!
         </p>
 
     </div>
@@ -24,6 +25,36 @@
             <span class="wodryX">can|do|this</span> with Wodry.js
         </p>
 
+    </div>
+    <div class="contain">
+        <p>If you want to rotate your text horizontaly you
+            <span class="wodrySX">can|do|this</span> with Wodry.js
+        </p>
+
+    </div>
+    <div class="contain">
+        <p>If you want to rotate your text horizontaly you
+            <span class="wodrySY">can|do|this</span> with Wodry.js
+        </p>
+
+    </div>
+    <div class="contain">
+        <p>If you want to rotate your text horizontaly you
+            <span class="wodrySAll">can|do|this</span> with Wodry.js
+        </p>
+
+    </div>
+    </div>
+    <div class="contain">
+        <p>If you want to rotate your text horizontaly you
+            <span class="wodryClockwise">can|do|this</span> with Wodry.js
+        </p>
+
+    </div>
+    <div class="contain">
+        <p>If you want to rotate your text horizontaly you
+            <span class="wodryAnticlockwise">can|do|this</span> with Wodry.js
+        </p>
     </div>
 
 </body>
@@ -39,7 +70,27 @@ $('.contain .wodryY').wodry({
     delay: 400
 });
 $('.contain .wodryX').wodry({
+    animation: 'rotateX',
+    delay: 700
+});
+$('.contain .wodrySX').wodry({
+    animation: 'scaleX',
+    delay: 1000
+});
+$('.contain .wodrySY').wodry({
+    animation: 'scaleY',
+    delay: 400
+});
+$('.contain .wodrySAll').wodry({
     animation: 'scaleAll',
+    delay: 700
+});
+$('.contain .wodryClockwise').wodry({
+    animation: 'clockwise',
+    delay: 400
+});
+$('.contain .wodryAnticlockwise').wodry({
+    animation: 'anticlockwise',
     delay: 700
 });
 </script>
