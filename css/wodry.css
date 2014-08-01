@@ -1,72 +1,24 @@
 .adjecting {
-  display: inline-block;
-  position: relative;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  -o-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-transform-origin-x: 50%;
+    display: inline-block;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin-x: 50%;
 }
-
 .adjecting .front-face, .adjecting .back-face {
-  display: inline-block;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
+    display: inline-block;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
-
 .adjecting .front-face {
-  position: absolute;
+    position: absolute;
 }
-
 .adjecting .back-face {
-  position: relative;
-}
-
-body, html{
-	width: 100%;
-	height: 100%;
-	margin: 0 auto;
-	background: #353535;
-	color: #fff;
-}
-
-.contain{
-	margin: 0 auto;
-	padding: 20px;
-	text-align: center;
-	width: 60%;
-	height: 20%;
-	font-family: sans-serif;
-	font-size: 3em;
-}
-
-/* Demo page classes */
-
-.wodry{
-  color: #ff786c;
-}
-.wodryX{
-  color: #c5ff71;
-}
-.wodryY{
-  color: #84caff;
-}
-.wodrySX{
-  color: #ff7fa2;
-}
-.wodrySY{
-  color: #9587ff;
-}
-.wodrySAll{
-  color: #8dffc2;
-}
-.wodryClockwise{
-  color: #ebff93;
-}
-.wodryAnticlockwise{
-  color: #9fffef;
+    position: relative;
 }
