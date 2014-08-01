@@ -8,7 +8,7 @@ module.exports = function(grunt) {
                 banner: '/* Sergey Golovin 2014 golovim@gmail.com */\n'
             },
             target: {
-                src: 'build/wodry.js',
+                src: 'dist/wodry.js',
                 dest: 'dist/wodry.min.js'
             }
         },
@@ -90,7 +90,7 @@ module.exports = function(grunt) {
         },
         jasmine: {
             exam: {
-                src: 'build/**/*.js',
+                src: '**/*.js',
                 options: {
                     specs: 'test/*Spec.js',
                     helpers: 'test/*Helper.js'
@@ -100,7 +100,7 @@ module.exports = function(grunt) {
         coffee: {
             compile: {
                 files: {
-                    'build/wodry.js': ['src/*.coffee']
+                    'dist/wodry.js': ['src/*.coffee']
                 }
             },
         }
