@@ -54,6 +54,15 @@
             transform: " rotateX(180deg) rotateY(180deg)",
             transition: " " + settings.animationTime + "ms"
           }
+        },
+        scaleX: {
+          isCoplex: true,
+          front_transform: "translate3d(0,0,0) scaleX(0.1)",
+          back_transform: "translate3d(0,0,0) scaleX(0.1)",
+          action: {
+            transform: " scaleX(10)",
+            transition: " " + settings.animationTime + "ms"
+          }
         }
       };
       return this.each(function() {
