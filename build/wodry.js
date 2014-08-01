@@ -63,6 +63,15 @@
             transform: " scaleX(10)",
             transition: " " + settings.animationTime + "ms"
           }
+        },
+        scaleY: {
+          isCoplex: true,
+          front_transform: "translate3d(0,0,0) scaleY(0.1)",
+          back_transform: "translate3d(0,0,0) scaleY(0.1)",
+          action: {
+            transform: " scaleY(10)",
+            transition: " " + settings.animationTime + "ms"
+          }
         }
       };
       return this.each(function() {
