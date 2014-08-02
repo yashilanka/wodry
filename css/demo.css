@@ -1,5 +1,5 @@
 body, html {
-    background: #454545;
+    background: #242424;
     color: #fff;
     font-family: sans-serif;
 }
@@ -26,6 +26,10 @@ body, html {
     text-align: center;
     height: 300px;
     padding: 20px;
+}
+
+.content{
+    margin: 0 auto;
 }
 
 
