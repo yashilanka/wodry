@@ -6,32 +6,22 @@ body, html {
 
 .col-xs-6{
     width: 45%;
+    height: 100%;
     margin: 25px;
 }
 
-.example, .doc{
-    height: 100%;
-    padding: 15px;
-    text-align: center;
-    vertical-align: middle;
-    font-size: 1.5em;
-    color: #fff;
-    background-color: #353535;
-}
-.doc {
-    background-color: #b6504d;
-}
-
 .example-box {
-    text-align: center;
-    height: 300px;
     padding: 20px;
 }
 
-.content{
+.code-block{
     margin: 0 auto;
+    font-size: 2em;
 }
 
+.example{
+    font-size: 1.75em;
+}
 
 .wodry {
     color: #ff786c;
