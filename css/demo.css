@@ -14,12 +14,32 @@ body, html {
     padding: 20px;
 }
 
-.title{
+.logo, .title{
     font-family: 'Fugaz One', cursive;
-    font-size: 3em;
+    font-size: 4em;
     margin: 50px auto;
     width: 100%;
     text-align: center;
+}
+
+.title{
+    font-family: sans-serif;
+    margin: 20px auto;
+    margin-bottom: 40px; 
+}
+
+.content{
+    font-size: 1.5em;
+}
+.content-block{
+    margin: 50px auto;
+}
+.content-block p {
+    margin: 20px;
+}
+
+.content-block li strong{
+    color: #71dbff;
 }
 
 .code-block{
@@ -53,4 +73,11 @@ body, html {
 }
 .titleItems{
     color: #71dbff;
+}
+.license{
+    font-size: 1em;
+    text-align: justify;
+}
+.license p {
+    margin: 20px auto;
 }
