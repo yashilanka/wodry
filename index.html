@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Wodry.js</title>
+    <link href='http://fonts.googleapis.com/css?family=Fugaz+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/wodry.css">
     <link rel="stylesheet" href="css/demo.css">
@@ -12,9 +13,14 @@
 <body>
     <div class="container">
         <div class="row">
+            <div class="title">
+                Wo<span class="titleItems">dr|rd</span>y.js
+            </div>
+        </div>
+        <div class="row">
             <div class="description">
-            <span class="descriptionItems">Wodry.js is a simple jQuery plugin for a text flipping/rotating written in CoffeeScript|It was inspired by the Adjector.js|Wodry.js does the same things as Adjector.js but it has new features that allow you to set animation from animations collection, set your own callback on content flipping, etc</span>
-                  
+                <span class="descriptionItems">Wodry.js is a simple jQuery plugin for a text flipping/rotating written in CoffeeScript|It was inspired by the Adjector.js|Wodry.js does the same things as Adjector.js but it has new features that allow you to set animation from animations collection, set your own callback on content flipping, etc</span>
+
             </div>
         </div>
         <div class="row example-box">
@@ -61,7 +67,7 @@
             </div>
             <div class="example col-xs-6">
                 Wodry.js can
-                <span class="wodryRY">flip|rotate</span>your text
+                <span class="wodryRY">flip|rotate</span> your text
             </div>
         </div>
     </div>
@@ -70,6 +76,7 @@
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="dist/wodry.js"></script>
 <script>
+var counter = 0;
 $('.wodry').wodry({
     animation: 'rotateAll',
     delay: 1000
@@ -88,6 +95,34 @@ $('.descriptionItems').wodry({
     animation: 'scaleAll',
     delay: 6000,
     animationDuration: 800
+});
+$('.titleItems').wodry({
+    animation: 'rotateY',
+    delay: 2000,
+    animationDuration: 800,
+    callback: function() {
+        var color1 = '#c0ff53',
+            color2 = '#71dbff'
+        if (counter % 2 === 0) {
+            $('.titleItems .back-face').css({
+                color: color1
+            });
+            $('.titleItems .front-face').css({
+                color: color2
+            });
+        } else {
+            $('.titleItems .back-face').css({
+                color: color2
+            });
+            $('.titleItems .front-face').css({
+                color: color1
+            });
+        }
+        counter++;
+        if (counter > 100) {
+            counter = 0;
+        }
+    }
 });
 </script>
 

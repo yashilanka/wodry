@@ -150,7 +150,7 @@
           if (animation.isCoplex) {
             return setTimeout(function() {
               return $("." + container.context.className + " .front-face").remove();
-            }, 20);
+            }, 1);
           }
         };
         flip = function() {
