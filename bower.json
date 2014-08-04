@@ -31,7 +31,7 @@
     ".Gruntfile.js",
     ".index.html",
     "karma.conf.js",
-    "package.json",
+    "package.json"
   ],
   "dependencies": {
     "jquery": "~2.1.1"
