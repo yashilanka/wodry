@@ -26,6 +26,9 @@
       if (settings.callback == null) {
         settings.callback = function() {};
       }
+      if (settings.shift == null) {
+        settings.shift = {};
+      }
       if ((_base = settings.shift).x == null) {
         _base.x = 0;
       }
