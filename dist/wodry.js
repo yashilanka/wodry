@@ -20,27 +20,31 @@
       if (settings.animationTime == null) {
         settings.animationTime = 500;
       }
-      if (settings.arm == null) {
-        settings.arm = 0;
-      }
       if (settings.animation == null) {
         settings.animation = 'rotateY';
       }
       if (settings.callback == null) {
         settings.callback = function() {};
       }
+      if (settings.shift == null) {
+        settings.shift = {
+          x: 0,
+          y: 0,
+          z: 0
+        };
+      }
       animations = {
         rotateY: {
-          front_transform: "translate3d(0,0," + settings.arm + "px)",
-          back_transform: "translate3d(0,0," + settings.arm + "px) rotateY(180deg)",
+          front_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px)",
+          back_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) rotateY(180deg)",
           action: {
             transform: " rotateY(180deg)",
             transition: " " + settings.animationTime + "ms"
           }
         },
         rotateX: {
-          front_transform: "translate3d(0,0," + settings.arm + "px)",
-          back_transform: "translate3d(0,0," + settings.arm + "px) rotateX(180deg)",
+          front_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px)",
+          back_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) rotateX(180deg)",
           action: {
             transform: " rotateX(180deg)",
             transition: " " + settings.animationTime + "ms"
@@ -48,8 +52,8 @@
         },
         rotateAll: {
           isCoplex: true,
-          front_transform: "translate3d(0,0,0) rotateX(180deg) rotateY(180deg)",
-          back_transform: "translate3d(0,0,0) rotateX(180deg) rotateY(180deg)",
+          front_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) rotateX(180deg) rotateY(180deg)",
+          back_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) rotateX(180deg) rotateY(180deg)",
           action: {
             transform: " rotateX(180deg) rotateY(180deg)",
             transition: " " + settings.animationTime + "ms"
@@ -57,8 +61,8 @@
         },
         scaleX: {
           isCoplex: true,
-          front_transform: "translate3d(0,0,0) scaleX(0.1)",
-          back_transform: "translate3d(0,0,0) scaleX(0.1)",
+          front_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) scaleX(0.1)",
+          back_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) scaleX(0.1)",
           action: {
             transform: " scaleX(10)",
             transition: " " + settings.animationTime + "ms"
@@ -66,8 +70,8 @@
         },
         scaleY: {
           isCoplex: true,
-          front_transform: "translate3d(0,0,0) scaleY(0.1)",
-          back_transform: "translate3d(0,0,0) scaleY(0.1)",
+          front_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) scaleY(0.1)",
+          back_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) scaleY(0.1)",
           action: {
             transform: " scaleY(10)",
             transition: " " + settings.animationTime + "ms"
@@ -75,8 +79,8 @@
         },
         scaleAll: {
           isCoplex: true,
-          front_transform: "translate3d(0,0,0) scaleY(0.1) slaleX(0.1)",
-          back_transform: "translate3d(0,0,0) scaleY(0.1) scaleX(0.1)",
+          front_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) scaleY(0.1) slaleX(0.1)",
+          back_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) scaleY(0.1) scaleX(0.1)",
           action: {
             transform: " scaleY(10) scaleX(10)",
             transition: " " + settings.animationTime + "ms"
@@ -84,8 +88,8 @@
         },
         anticlockwise: {
           isCoplex: true,
-          front_transform: "translate3d(0,0,0) rotate3d(100,40,-80,180deg)",
-          back_transform: "translate3d(0,0,0) rotate3d(100,40,-80,180deg)",
+          front_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) rotate3d(100,40,-80,180deg)",
+          back_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) rotate3d(100,40,-80,180deg)",
           action: {
             transform: " rotate3d(100,40,-80,180deg)",
             transition: " " + settings.animationTime + "ms"
@@ -93,8 +97,8 @@
         },
         clockwise: {
           isCoplex: true,
-          front_transform: "translate3d(0,0,0) rotate3d(40,100,80,180deg)",
-          back_transform: "translate3d(0,0,0) rotate3d(40,100,80,180deg)",
+          front_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) rotate3d(40,100,80,180deg)",
+          back_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) rotate3d(40,100,80,180deg)",
           action: {
             transform: " rotate3d(40,100,80,180deg)",
             transition: " " + settings.animationTime + "ms"
