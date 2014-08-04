@@ -11,6 +11,12 @@
 
 <body>
     <div class="container">
+        <div class="row">
+            <div class="description">
+            <span class="descriptionItems">Wodry.js is a simple jQuery plugin for a text flipping/rotating written in CoffeeScript|It was inspired by the Adjector.js|Wodry.js does the same things as Adjector.js but it has new features that allow you to set animation from animations collection, set your own callback on content flipping, etc</span>
+                  
+            </div>
+        </div>
         <div class="row example-box">
             <div class="col-xs-6">
                 <div class="code-block">
@@ -54,8 +60,8 @@
                 </div>
             </div>
             <div class="example col-xs-6">
-                Wodry.js can 
-                <span class="wodryRY">flip|rotate</span> your text
+                Wodry.js can
+                <span class="wodryRY">flip|rotate</span>your text
             </div>
         </div>
     </div>
@@ -77,6 +83,11 @@ $('.wodryRY').wodry({
     animation: 'rotateY',
     delay: 1000,
     animationDuration: 300
+});
+$('.descriptionItems').wodry({
+    animation: 'scaleAll',
+    delay: 6000,
+    animationDuration: 800
 });
 </script>
 

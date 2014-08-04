@@ -23,6 +23,14 @@ body, html {
     font-size: 1.75em;
 }
 
+.description{
+    width: 80%;
+    height: 150px;
+    text-align: center;
+    font-size: 2em;
+    margin: 0 auto;
+}
+
 .wodry {
     color: #9fffef;
 }
@@ -32,18 +40,6 @@ body, html {
 .wodryRY {
     color: #84caff;
 }
-.wodrySX {
-    color: #ff7fa2;
-}
-.wodrySY {
-    color: #9587ff;
-}
-.wodrySAll {
-    color: #8dffc2;
-}
-.wodryClockwise {
-    color: #ebff93;
-}
-.wodryAnticlockwise {
-    color: #9fffef;
+.description{
+    color: #b2a5ff;
 }
