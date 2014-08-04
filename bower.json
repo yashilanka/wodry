@@ -27,9 +27,9 @@
     "test",
     "tests",
     "css/demo.css",
-    "./_SpecRunner.html",
-    ".Gruntfile.js",
-    ".index.html",
+    "_SpecRunner.html",
+    "Gruntfile.js",
+    "index.html",
     "karma.conf.js",
     "package.json"
   ],
