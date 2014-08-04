@@ -17,8 +17,8 @@
       if (settings.delay == null) {
         settings.delay = 2000;
       }
-      if (settings.animationTime == null) {
-        settings.animationTime = 500;
+      if (settings.animationDuration == null) {
+        settings.animationDuration = 500;
       }
       if (settings.animation == null) {
         settings.animation = 'rotateY';
@@ -44,7 +44,7 @@
           back_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) rotateY(180deg)",
           action: {
             transform: " rotateY(180deg)",
-            transition: " " + settings.animationTime + "ms"
+            transition: " " + settings.animationDuration + "ms"
           }
         },
         rotateX: {
@@ -52,7 +52,7 @@
           back_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) rotateX(180deg)",
           action: {
             transform: " rotateX(180deg)",
-            transition: " " + settings.animationTime + "ms"
+            transition: " " + settings.animationDuration + "ms"
           }
         },
         rotateAll: {
@@ -61,7 +61,7 @@
           back_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) rotateX(180deg) rotateY(180deg)",
           action: {
             transform: " rotateX(180deg) rotateY(180deg)",
-            transition: " " + settings.animationTime + "ms"
+            transition: " " + settings.animationDuration + "ms"
           }
         },
         scaleX: {
@@ -70,7 +70,7 @@
           back_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) scaleX(0.1)",
           action: {
             transform: " scaleX(10)",
-            transition: " " + settings.animationTime + "ms"
+            transition: " " + settings.animationDuration + "ms"
           }
         },
         scaleY: {
@@ -79,7 +79,7 @@
           back_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) scaleY(0.1)",
           action: {
             transform: " scaleY(10)",
-            transition: " " + settings.animationTime + "ms"
+            transition: " " + settings.animationDuration + "ms"
           }
         },
         scaleAll: {
@@ -88,7 +88,7 @@
           back_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) scaleY(0.1) scaleX(0.1)",
           action: {
             transform: " scaleY(10) scaleX(10)",
-            transition: " " + settings.animationTime + "ms"
+            transition: " " + settings.animationDuration + "ms"
           }
         },
         anticlockwise: {
@@ -97,7 +97,7 @@
           back_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) rotate3d(100,40,-80,180deg)",
           action: {
             transform: " rotate3d(100,40,-80,180deg)",
-            transition: " " + settings.animationTime + "ms"
+            transition: " " + settings.animationDuration + "ms"
           }
         },
         clockwise: {
@@ -106,7 +106,7 @@
           back_transform: "translate3d(" + settings.shift.x + "px," + settings.shift.y + "px," + settings.shift.z + "px) rotate3d(40,100,80,180deg)",
           action: {
             transform: " rotate3d(40,100,80,180deg)",
-            transition: " " + settings.animationTime + "ms"
+            transition: " " + settings.animationDuration + "ms"
           }
         }
       };
@@ -168,7 +168,7 @@
         return setInterval(function() {
           flip();
           return settings.callback();
-        }, settings.delay + settings.animationTime);
+        }, settings.delay + settings.animationDuration);
       });
     }
   });

@@ -5,7 +5,7 @@ $.fn.extend
         settings = $.extend({}, config)
         settings.separator ?= '|'
         settings.delay ?= 2000
-        settings.animationTime ?= 500
+        settings.animationDuration ?= 500
         settings.animation ?= 'rotateY'
         settings.callback ?= ->
         settings.shift ?= {}
@@ -19,55 +19,55 @@ $.fn.extend
                 back_transform: "translate3d(#{settings.shift.x}px,#{settings.shift.y}px,#{settings.shift.z}px) rotateY(180deg)"
                 action:
                     transform: " rotateY(180deg)"
-                    transition:" #{settings.animationTime}ms"
+                    transition:" #{settings.animationDuration}ms"
             rotateX:
                 front_transform: "translate3d(#{settings.shift.x}px,#{settings.shift.y}px,#{settings.shift.z}px)"
                 back_transform: "translate3d(#{settings.shift.x}px,#{settings.shift.y}px,#{settings.shift.z}px) rotateX(180deg)"
                 action:
                     transform: " rotateX(180deg)"
-                    transition:" #{settings.animationTime}ms"
+                    transition:" #{settings.animationDuration}ms"
             rotateAll:
                 isCoplex: true
                 front_transform: "translate3d(#{settings.shift.x}px,#{settings.shift.y}px,#{settings.shift.z}px) rotateX(180deg) rotateY(180deg)"
                 back_transform: "translate3d(#{settings.shift.x}px,#{settings.shift.y}px,#{settings.shift.z}px) rotateX(180deg) rotateY(180deg)"
                 action:
                     transform: " rotateX(180deg) rotateY(180deg)"
-                    transition:" #{settings.animationTime}ms"
+                    transition:" #{settings.animationDuration}ms"
             scaleX:
                 isCoplex: true
                 front_transform: "translate3d(#{settings.shift.x}px,#{settings.shift.y}px,#{settings.shift.z}px) scaleX(0.1)"
                 back_transform: "translate3d(#{settings.shift.x}px,#{settings.shift.y}px,#{settings.shift.z}px) scaleX(0.1)"
                 action:
                     transform: " scaleX(10)"
-                    transition:" #{settings.animationTime}ms"
+                    transition:" #{settings.animationDuration}ms"
             scaleY:
                 isCoplex: true
                 front_transform: "translate3d(#{settings.shift.x}px,#{settings.shift.y}px,#{settings.shift.z}px) scaleY(0.1)"
                 back_transform: "translate3d(#{settings.shift.x}px,#{settings.shift.y}px,#{settings.shift.z}px) scaleY(0.1)"
                 action:
                     transform: " scaleY(10)"
-                    transition:" #{settings.animationTime}ms"
+                    transition:" #{settings.animationDuration}ms"
             scaleAll:
                 isCoplex: true
                 front_transform: "translate3d(#{settings.shift.x}px,#{settings.shift.y}px,#{settings.shift.z}px) scaleY(0.1) slaleX(0.1)"
                 back_transform: "translate3d(#{settings.shift.x}px,#{settings.shift.y}px,#{settings.shift.z}px) scaleY(0.1) scaleX(0.1)"
                 action:
                     transform: " scaleY(10) scaleX(10)"
-                    transition:" #{settings.animationTime}ms"
+                    transition:" #{settings.animationDuration}ms"
             anticlockwise:
                 isCoplex: true
                 front_transform: "translate3d(#{settings.shift.x}px,#{settings.shift.y}px,#{settings.shift.z}px) rotate3d(100,40,-80,180deg)"
                 back_transform: "translate3d(#{settings.shift.x}px,#{settings.shift.y}px,#{settings.shift.z}px) rotate3d(100,40,-80,180deg)"
                 action:
                     transform: " rotate3d(100,40,-80,180deg)"
-                    transition:" #{settings.animationTime}ms"
+                    transition:" #{settings.animationDuration}ms"
             clockwise:
                 isCoplex: true
                 front_transform: "translate3d(#{settings.shift.x}px,#{settings.shift.y}px,#{settings.shift.z}px) rotate3d(40,100,80,180deg)"
                 back_transform: "translate3d(#{settings.shift.x}px,#{settings.shift.y}px,#{settings.shift.z}px) rotate3d(40,100,80,180deg)"
                 action:
                     transform: " rotate3d(40,100,80,180deg)"
-                    transition:" #{settings.animationTime}ms"
+                    transition:" #{settings.animationDuration}ms"
 
         @each ->
             flip_container = $(this)
@@ -125,4 +125,4 @@ $.fn.extend
             setInterval -> 
                 do flip
                 do settings.callback
-            , (settings.delay + settings.animationTime)
+            , (settings.delay + settings.animationDuration)
