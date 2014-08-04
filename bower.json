@@ -1,0 +1,31 @@
+{
+  "name": "Wodry.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/daynin/wodry",
+  "authors": [
+    "Sergey Golovin <golovim@gmail.com>"
+  ],
+  "description": "Wodry.js is a simple jQuery plugin for a text flipping/rotating written in CoffeeScript. It was inspired by the Adjector.js. Wodry.js does the same things but it has new features that allow you to set animation from animations collection, set your own callback on content flipping, etc.",
+  "keywords": [
+    "wodry",
+    "text",
+    "flipper",
+    "content",
+    "flipper",
+    "text",
+    "animations",
+    "flipper"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "css/demo.css",
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  }
+}
