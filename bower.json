@@ -1,6 +1,6 @@
 {
   "name": "Wodry.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/daynin/wodry",
   "authors": [
     "Sergey Golovin <golovim@gmail.com>"
@@ -19,6 +19,10 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
+    "./*",
+    "src",
+    ".grunt",
+    "fonts",
     "node_modules",
     "bower_components",
     "test",
