@@ -19,7 +19,6 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
-    "./*",
     "src",
     ".grunt",
     "fonts",
@@ -27,7 +26,12 @@
     "bower_components",
     "test",
     "tests",
-    "css/demo.css"
+    "css/demo.css",
+    "./_SpecRunner.html",
+    ".Gruntfile.js",
+    ".index.html",
+    "karma.conf.js",
+    "package.json",
   ],
   "dependencies": {
     "jquery": "~2.1.1"
