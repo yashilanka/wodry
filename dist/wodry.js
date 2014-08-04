@@ -6,7 +6,7 @@
 
   $.fn.extend({
     wodry: function(config) {
-      var animations, settings;
+      var animations, settings, _base, _base1, _base2;
       if (config == null) {
         config = {};
       }
@@ -26,12 +26,14 @@
       if (settings.callback == null) {
         settings.callback = function() {};
       }
-      if (settings.shift == null) {
-        settings.shift = {
-          x: 0,
-          y: 0,
-          z: 0
-        };
+      if ((_base = settings.shift).x == null) {
+        _base.x = 0;
+      }
+      if ((_base1 = settings.shift).y == null) {
+        _base1.y = 0;
+      }
+      if ((_base2 = settings.shift).z == null) {
+        _base2.z = 0;
       }
       animations = {
         rotateY: {

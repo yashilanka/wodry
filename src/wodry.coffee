@@ -8,11 +8,9 @@ $.fn.extend
         settings.animationTime ?= 500
         settings.animation ?= 'rotateY'
         settings.callback ?= ->
-        settings.shift ?= {
-            x: 0
-            y: 0
-            z: 0
-        }
+        settings.shift.x ?= 0;
+        settings.shift.y ?= 0;
+        settings.shift.z ?= 0;
 
         animations =
             rotateY:
