@@ -7,7 +7,7 @@ Wodry.js is a simple jQuery plugin for a text flipping/rotating written in Coffe
 You can download this repository or install it from Bower:
 
 ```bash
-	bower install wodry
+bower install wodry
 ```
 
 ##How it works
