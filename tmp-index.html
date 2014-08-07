@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>fullPage.js One Page Scroll Sites</title>
+    <meta name="author" content="Alvaro Trigo Lopez" />
+    <meta name="description" content="fullPage plugin by Alvaro Trigo. Create fullscreen pages fast and simple. One page scroll like iPhone website." />
+    <meta name="keywords" content="fullpage,jquery,alvaro,trigo,plugin,fullscren,screen,full,iphone5,apple" />
+    <meta name="Resource-type" content="Document" />
+
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="css/examples.css" />
+    <link rel="stylesheet" href="css/wodry.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+
+    <style>
+    /* Sections
+         * --------------------------------------- */
+    #section0 img,
+    #section1 img {
+        margin: 20px 0 0 0;
+    }
+    #section2 img {
+        margin: 20px 0 0 52px;
+    }
+    #section3 img {
+        bottom: 0px;
+        position: absolute;
+        margin-left: -420px;
+    }
+    .intro p {
+        width: 50%;
+        margin: 0 auto;
+        font-size: 1.5em;
+    }
+    .twitter-share-button {
+        position: absolute;
+        z-index: 99;
+        right: 149px;
+        top: 9px;
+    }
+    </style>
+    <!--[if IE]>
+        <script type="text/javascript">
+             var console = { log: function() {} };
+        </script>
+    <![endif]-->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="vendors/jquery.fullPage.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="vendors/examples.js"></script>
+    <script src="dist/wodry.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#fullpage').fullpage({
+            sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+            anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+            menu: '#menu',
+            verticalCentered: true,
+        });
+
+    });
+    </script>
+
+</head>
+
+<body>
+
+
+    <select id="demosMenu">
+        <option id="background" selected>Choose Demo</option>
+        <option id="background">Background images</option>
+        <option id="backgroundVideo">Background video</option>
+        <option id="gradientBackgrounds">Gradient backgrounds</option>
+        <option id="looping">Looping</option>
+        <option id="noAnchor">No anchor links</option>
+        <option id="scrollingSpeed">Scrolling speed</option>
+        <option id="easing">Easing</option>
+        <option id="callbacks">Callbacks</option>
+        <option id="css3">CSS3</option>
+        <option id="continuous">Continuous scrolling</option>
+        <option id="normalScroll">Normal scrolling</option>
+        <option id="scrolling">Scroll inside sections and slides</option>
+        <option id="navigationV">Vertical navigation dots</option>
+        <option id="navigationH">Horizontal navigation dots</option>
+        <option id="fixedHeaders">Fixed headers</option>
+        <option id="apple">Apple iPhone demo (animations)</option>
+        <option id="oneSection">One Single Section</option>
+        <option id="fullVideos">Full background videos</option>
+    </select>
+
+    <ul id="menu">
+        <li data-menuanchor="firstPage"><a href="#firstPage">First slide</a>
+        </li>
+        <li data-menuanchor="secondPage"><a href="#secondPage">Second slide</a>
+        </li>
+        <li data-menuanchor="3rdPage"><a href="#3rdPage">Third slide</a>
+        </li>
+        <li data-menuanchor="4thpage"><a href="#4thpage">Fourth slide</a>
+        </li>
+    </ul>
+
+
+    <div id="fullpage">
+        <div class="section " id="section0">
+            <div class="container">
+                <div class="row">
+                    <div class="logo">
+                        Wo
+                        <span class="titleItems">dr|rd</span>y.js
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="description">
+                        <span class="descriptionItems">Wodry.js is a simple jQuery plugin for a text flipping/rotating written in CoffeeScript|It was inspired by the Adjector.js|Wodry.js does the same things as Adjector.js but it has new features that allow you to set animation from animations collection, set your own callback on content flipping, etc</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section1">
+            <div class="container">
+                <div class="row">
+                    <div class="title">
+                        Examples
+                    </div>
+                </div>
+                <div class="row example-box">
+                    <div class="col-xs-6">
+                        <div class="code-block">
+                            <pre style="background:#f9f9f9;color:#080808"><span style="color:#691c97">$</span>('<span style="color:#bf4f24">.wodry</span>').wodry({
+    animation: <span style="color:#0b6125">'rotateAll'</span>,
+    delay: <span style="color:#811f24;font-weight:700">1000</span>
+});
+</pre>
+                        </div>
+                    </div>
+                    <div class="example col-xs-6">
+                        Wodry.js is
+                        <span class="wodry">a simple jQuery plugin|a content flipper|wiritten in CoffeeScript</span>
+                    </div>
+                </div>
+                <div class="row example-box">
+                    <div class="col-xs-6">
+                        <div class="code-block">
+                            <pre style="background:#f9f9f9;color:#080808"><span style="color:#691c97">$</span>('<span style="color:#bf4f24">.wodryRX</span>').wodry({
+    animation: <span style="color:#0b6125">'rotateX'</span>,
+    delay: <span style="color:#811f24;font-weight:700">1000</span>,
+    animationDuration: <span style="color:#811f24;font-weight:700">800</span>
+});
+</pre>
+                        </div>
+                    </div>
+                    <div class="example col-xs-6">
+                        Wodry.js is
+                        <span class="wodryRX">cool|simple|flexible</span>
+                    </div>
+                </div>
+                <div class="row example-box">
+                    <div class="col-xs-6">
+                        <div class="code-block">
+                            <pre style="background:#f9f9f9;color:#080808"><span style="color:#691c97">$</span>('<span style="color:#bf4f24">.wodryRY</span>').wodry({
+    animation: <span style="color:#0b6125">'rotateY'</span>,
+    delay: <span style="color:#811f24;font-weight:700">1000</span>,
+    animationDuration: <span style="color:#811f24;font-weight:700">300</span>
+});
+</pre>
+                        </div>
+                    </div>
+                    <div class="example col-xs-6">
+                        Wodry.js can
+                        <span class="wodryRY">flip|rotate</span>your text
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section2">
+            <div class="intro">
+                <h1>Example</h1>
+                <p>HTML markup example to define 4 sections.</p>
+                <img src="imgs/example2.png" alt="example" />
+            </div>
+        </div>
+        <div class="section" id="section3">
+            <div class="intro">
+                <h1>Working On Tablets</h1>
+                <p>
+                    Designed to fit to different screen sizes as well as tablet and mobile devices.
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </p>
+            </div>
+            <img src="imgs/tablets.png" alt="tablets" />
+        </div>
+    </div>
+    <script>
+    var counter = 0;
+    $('.wodry').wodry({
+        animation: 'rotateAll',
+        delay: 1000
+    });
+    $('.wodryRX').wodry({
+        animation: 'rotateX',
+        delay: 1000,
+        animationDuration: 800
+    });
+    $('.wodryRY').wodry({
+        animation: 'rotateY',
+        delay: 1000,
+        animationDuration: 300
+    });
+    $('.descriptionItems').wodry({
+        animation: 'scaleAll',
+        delay: 6000,
+        animationDuration: 800
+    });
+    $('.titleItems').wodry({
+        animation: 'rotateY',
+        delay: 2000,
+        animationDuration: 800,
+        callback: function() {
+            var color1 = '#c0ff53',
+                color2 = '#71dbff'
+            if (counter % 2 === 0) {
+                $('.titleItems .back-face').css({
+                    color: color1
+                });
+                $('.titleItems .front-face').css({
+                    color: color2
+                });
+            } else {
+                $('.titleItems .back-face').css({
+                    color: color2
+                });
+                $('.titleItems .front-face').css({
+                    color: color1
+                });
+            }
+            counter++;
+            if (counter > 100) {
+                counter = 0;
+            }
+        }
+    });
+    </script>
+</body>
+
+</html>
