@@ -58,7 +58,6 @@ h1 {
 p {
     /*    font-size: 2em;*/
 }
-
 .section {
     text-align: center;
     position: relative;
@@ -113,7 +112,6 @@ p {
     right: 10px;
     z-index: 999;
 }
-
 .example-box {
     padding: 20px;
     text-align: left;
@@ -121,8 +119,6 @@ p {
 .logo, .title {
     font-family: 'Fugaz One', cursive;
     font-size: 4em;
-/*    margin: 50px auto;
-    margin-top: 15%;*/
     width: 100%;
     text-align: center;
 }
@@ -139,7 +135,7 @@ p {
     margin: 20px;
 }
 .content-block li strong {
-    color: #71dbff;
+    color: #cdeee4;
 }
 .code-block {
     margin: 0 auto;
@@ -168,7 +164,7 @@ p {
     color: #c0ff53;
 }
 .titleItems {
-    color: #9de4ff;
+    color: #a5dfff;
 }
 .license {
     font-size: 1em;
@@ -180,4 +176,18 @@ p {
 .short-code-block {
     margin-left: 10%;
     width: 60%;
+}
+.code-span {
+    font-style: italic;
+    color: #353535;
+    display: inline-block;
+    font-size: 1em;
+    padding: 10px;
+}
+.github {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+    z-index: 100;
 }

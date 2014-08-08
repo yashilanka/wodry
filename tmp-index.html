@@ -10,10 +10,11 @@
     <meta name="Resource-type" content="Document" />
 
 
+    <link href='http://fonts.googleapis.com/css?family=Fugaz+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
-    <link rel="stylesheet" type="text/css" href="css/examples.css" />
     <link rel="stylesheet" href="css/wodry.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/examples.css" />
 
 
     <style>
@@ -55,12 +56,12 @@
     <script type="text/javascript" src="vendors/jquery.fullPage.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="vendors/examples.js"></script>
-    <script src="dist/wodry.js"></script>
+    <script src="dist/wodry.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
         $('#fullpage').fullpage({
-            sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
-            anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+            sectionsColor: ['#6375bc', '#c34f2b', '#5dbe58', '#635db4', '#5abc8e', '#3d4349'],
+            anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thPage', '6thpage'],
             menu: '#menu',
             verticalCentered: true,
         });
@@ -71,38 +72,23 @@
 </head>
 
 <body>
-
-
-    <select id="demosMenu">
-        <option id="background" selected>Choose Demo</option>
-        <option id="background">Background images</option>
-        <option id="backgroundVideo">Background video</option>
-        <option id="gradientBackgrounds">Gradient backgrounds</option>
-        <option id="looping">Looping</option>
-        <option id="noAnchor">No anchor links</option>
-        <option id="scrollingSpeed">Scrolling speed</option>
-        <option id="easing">Easing</option>
-        <option id="callbacks">Callbacks</option>
-        <option id="css3">CSS3</option>
-        <option id="continuous">Continuous scrolling</option>
-        <option id="normalScroll">Normal scrolling</option>
-        <option id="scrolling">Scroll inside sections and slides</option>
-        <option id="navigationV">Vertical navigation dots</option>
-        <option id="navigationH">Horizontal navigation dots</option>
-        <option id="fixedHeaders">Fixed headers</option>
-        <option id="apple">Apple iPhone demo (animations)</option>
-        <option id="oneSection">One Single Section</option>
-        <option id="fullVideos">Full background videos</option>
-    </select>
-
+    <div class="github">
+        <a href="https://github.com/daynin/wodry">
+            <img src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+        </a>
+    </div>
     <ul id="menu">
-        <li data-menuanchor="firstPage"><a href="#firstPage">First slide</a>
+        <li data-menuanchor="firstPage"><a href="#firstPage">About</a>
         </li>
-        <li data-menuanchor="secondPage"><a href="#secondPage">Second slide</a>
+        <li data-menuanchor="secondPage"><a href="#secondPage">Examples</a>
         </li>
-        <li data-menuanchor="3rdPage"><a href="#3rdPage">Third slide</a>
+        <li data-menuanchor="3rdPage"><a href="#3rdPage">How it works</a>
         </li>
-        <li data-menuanchor="4thpage"><a href="#4thpage">Fourth slide</a>
+        <li data-menuanchor="4thpage"><a href="#4thpage">Settings</a>
+        </li>
+        <li data-menuanchor="5thPage"><a href="#5thPage">Get it</a>
+        </li>
+        <li data-menuanchor="6thpage"><a href="#6thpage">License</a>
         </li>
     </ul>
 
@@ -112,8 +98,7 @@
             <div class="container">
                 <div class="row">
                     <div class="logo">
-                        Wo
-                        <span class="titleItems">dr|rd</span>y.js
+                        Wo<span class="titleItems">dr|rd</span>y.js
                     </div>
                 </div>
                 <div class="row">
@@ -175,32 +160,124 @@
                     </div>
                     <div class="example col-xs-6">
                         Wodry.js can
-                        <span class="wodryRY">flip|rotate</span>your text
+                        <span class="wodryRY">flip|rotate</span> your text
                     </div>
                 </div>
             </div>
         </div>
         <div class="section" id="section2">
-            <div class="intro">
-                <h1>Example</h1>
-                <p>HTML markup example to define 4 sections.</p>
-                <img src="imgs/example2.png" alt="example" />
+            <div class="container">
+                <div class="row">
+                    <div class="title">How it works</div>
+                    <div class="content">
+                        <div class="content-block">
+                            <p>In the first place you need to include wodry.css and wodry.js (wodry.min.js) files then create html tag with content that will flip/rotate (like this):</p>
+
+
+                            <pre style="background:#f9f9f9;color:#080808">&lt;<span style="color:#bf4f24">div</span>>
+    Bla bla bla &lt;<span style="color:#bf4f24">span</span> <span style="color:#bf4f24">class</span>=<span style="color:#0b6125">"wodry"</span>>word1|word2|word3&lt;/<span style="color:#bf4f24">span</span>>
+&lt;/<span style="color:#bf4f24">div</span>>
+</pre>
+                        </div>
+
+                        <div class="content-block">
+                            <p>And in the script tag add this:</p>
+
+
+                            <pre style="background:#f9f9f9;color:#080808"><span style="color:#691c97">$</span>('<span style="color:#bf4f24">.wodry</span>').wodry();
+</pre>
+                        </div>
+
+                        <div class="content-block">
+                            <p>In this case it will works with default settings. But if you want you can specify settings of wodry.js:</p>
+
+
+                            <pre style="background:#f9f9f9;color:#080808"><span style="color:#691c97">$</span>('<span style="color:#bf4f24">.wodry</span>').wodry({ <span style="color:#5a525f;font-style:italic">//settings });</span>
+</pre>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="section" id="section3">
-            <div class="intro">
-                <h1>Working On Tablets</h1>
-                <p>
-                    Designed to fit to different screen sizes as well as tablet and mobile devices.
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                </p>
+            <div class="container">
+                <div class="row">
+                    <div class="title">
+                        Custom settings
+                    </div>
+                    <div class="content">
+                        <div class="content-block">
+                            <p>Settings object has the following fields:</p>
+                            <ul>
+                                <li>
+                                    <strong>separator</strong>: sets a custom separator between flipped text.
+                                    <strong>Default value</strong>: '|";</li>
+                                <li>
+                                    <strong>delay</strong>: sets a delay of interations.
+                                    <strong>Default value</strong>: 2000;</li>
+                                <li>
+                                    <strong>animationDuration</strong>: sets duration of animation.
+                                    <strong>Default value</strong>: 500;</li>
+                                <li>
+                                    <strong>animation</strong>: sets a type of animation.
+                                    <strong>Default value</strong>: 'rotateY';</li>
+                                <li>
+                                    <strong>callback</strong>: sets a callback that calls on each iteration.
+                                    <strong>Default value</strong>: an empty function;</li>
+                                <li>
+                                    <strong>shift</strong>: specify the X,Y and Z values of shifting.
+                                    <strong>Default value</strong>: {x:0,y:0,z:0};</li>
+                            </ul>
+                        </div>
+                        <div class="content-block">
+                            <p>List of animations: rotateX, rotateY, rotateAll, scaleX, scaleY, scaleAll, clockwise, anticlockwise</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <img src="imgs/tablets.png" alt="tablets" />
+        </div>
+        <div class="section" id="section4">
+            <div class="container">
+                <div class="row">
+                    <div class="title">Get it</div>
+                    <div class="content">
+                        <div class="content-block" style="text-align:center;">
+                            <p>You can install it from bower: <pre class="code-span">bower install wodry</pre>
+                            </p>
+
+                            </pre>
+                            <p>Or download it from <a href="https://github.com/daynin/wodry">GitHub</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section5">
+            <div class="container">
+                <div class="row">
+                    <div class="title">License</div>
+                    <div class="content">
+                        <div class="license">
+                            <p>
+                                The MIT License (MIT)
+                            </p>
+                            <p>
+                                Copyright (c) 2014 Sergey Golovin
+                            </p>
+                            <p>
+                                Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+                            </p>
+                            <p>
+                                The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+                            </p>
+                            <p>
+                                THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script>
@@ -229,8 +306,8 @@
         delay: 2000,
         animationDuration: 800,
         callback: function() {
-            var color1 = '#c0ff53',
-                color2 = '#71dbff'
+            var color1 = '#ccff84',
+                color2 = '#a5dfff'
             if (counter % 2 === 0) {
                 $('.titleItems .back-face').css({
                     color: color1
