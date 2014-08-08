@@ -58,6 +58,10 @@ h1 {
 p {
     /*    font-size: 2em;*/
 }
+
+pre{
+    padding: 10px;
+}
 .section {
     text-align: center;
     position: relative;
