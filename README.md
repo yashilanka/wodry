@@ -56,4 +56,4 @@ List of animations:
 - clockwise;
 - anticlockwise;
 
-##[Examples here](http://daynin.github.io/wodry/)
+##[Examples here](http://daynin.github.io/wodry/#examples)
