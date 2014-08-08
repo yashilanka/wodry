@@ -57,3 +57,29 @@ List of animations:
 - anticlockwise;
 
 ##[Examples here](http://daynin.github.io/wodry/#examples)
+
+##Development
+
+###Prerequirements
+
+- [node.js](http://nodejs.org/)
+- grunt
+    
+```bash
+    npm install -g grunt-cli
+```
+
+When node.js and grunt will be installed you need to run 'npm install' command in a root folder of the project for installation of all dependencies.
+
+For autocompiling .coffeescript to .js run grunt with 'dev' parameter in a root folder of the project:
+```bash
+    grunt dev
+```
+For project building run:
+```bash
+    grunt
+```
+###Contributions & Issues
+
+All your issues and pull requests are welcome!
+
