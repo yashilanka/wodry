@@ -17,7 +17,7 @@ In the first place you need to include wodry.css and wodry.js (wodry.min.js) fil
 ```html
 
 <div>
-	Bla bla bla <span class="wodry">word1|word2|word3</span>
+    Bla bla bla <span class="wodry">word1|word2|word3</span>
 </div>
 
 ```
@@ -32,7 +32,7 @@ In this case it will works with default settings. But if you want you can specif
 
 ```javascript
 $('.wodry').wodry({
-	//settings
+    //settings
 });
 ```
 
