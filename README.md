@@ -38,7 +38,7 @@ $('.wodry').wodry({
 
 Settings object has the following fields:
 
-- **separator**: sets a custom separator between flipped text. **Default value:** '|";
+- **separator**: sets a custom separator between flipped text. **Default value:** "|";
 - **delay**: sets a delay of interations. **Default value:** 2000;
 - **animationDuration**: sets duration of animation. **Default value:** 500;
 - **animation**: sets a type of animation. **Default value:** 'rotateY';
